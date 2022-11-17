@@ -1,0 +1,85 @@
+.projects { 
+    background-image: linear-gradient(to top, #ebedee 0%, white 100%);
+    display: grid;
+    margin: 0;
+    padding: 0;
+}
+
+.projects-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 4rem;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    min-height: 70vh;
+}
+
+.card {
+    position: relative;
+    width: 19rem;
+    height: 22rem;
+    margin: 2rem;
+}
+
+.face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: .4rem;
+    overflow: hidden;
+    transition: .5s;
+}
+
+.front {
+    transform: perspective(600px) rotateY('0deg');
+    box-shadow: 0 5px 10px #000;
+}
+
+.front img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.back {  
+    transform: perspective(600px) rotateY(180deg); /*El rotate 180 o 0 da la vuelta*/
+    background: #f9ce0f;
+    padding: 1rem;
+    box-shadow: 0 5px 10px #000;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;  
+}
+
+.back .link {
+    border-top: 1px solid #f3f3f3;
+    height: 3rem;
+    line-height: 3rem;
+}
+
+.back h4 {
+    margin-top: 1.5rem;
+}
+
+.back p {
+    letter-spacing: 1px;
+}
+
+.card:hover .front {
+    transform: perspective(600px) rotateY(180deg);
+}
+
+.card:hover .back {
+    transform: perspective(600px) rotateY(360deg);
+}

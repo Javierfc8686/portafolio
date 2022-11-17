@@ -1,0 +1,48 @@
+header {
+    background-image: url('../assets/vector1.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    min-height: 31rem;
+}
+
+
+.header-text {
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    /*Centramos los elementos horizontal y verticalmente*/
+    display: grid;
+    place-items: center; 
+}
+
+.header-text p {
+    margin-bottom: 2rem;
+}
+
+/*Si hacen click en el menu, se esconde el text*/
+.header-text--hide {
+    transform: translateY(-400%);
+}
+
+/*Efecto máquina de escribir h1*/
+
+.header-text span {
+    display: block;
+    white-space: nowrap;
+    border-right: 4px solid;
+    width: 22rem; /*Ancho linea*/
+
+    animation: typing 2s steps(12), blink .5s infinite step-end alternate;
+    overflow:hidden;
+}
+    @keyframes typing {
+        from { width: 0}
+        }
+        
+    @keyframes blink {
+        50% { border-color: transparent}
+        }
